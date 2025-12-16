@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funtions</title>
+  </head>
+  <body>
+    <script>
+      /*
+      function function1() {
+        console.log('hello');
+        console.log(2 + 2);
+      }
+
+      function1();
+      */
+
+      /*function calculateTax(cost, taxPercent = 0.1) {
+        console.log(cost * taxPercent);
+      }
+
+      calculateTax(2000, 0.2);
+      calculateTax(5000);*/
+
+      /*function greet(name) {
+        console.log(`Hello ${name}`);
+
+        if(!name) {
+          console.log(`Hello there`);
+        }
+      }
+
+      greet('Lawrence');
+      greet('Simon');
+      greet();*/
+
+      /*
+      function convertToFahrenheit(celsius){
+        const Fahrenheit = (celsius * 9/5) + 32;
+        console.log(Fahrenheit);
+
+        return Fahrenheit;
+      }
+
+      // convertToFahrenheit(25);
+
+      function convertToCelsius(fahrenheit) {
+        const Celsius = (fahrenheit - 32) * 5 / 9;
+        console.log(Celsius);
+
+        return Celsius;
+      }
+
+      // convertToCelsius(86);
+
+      function convertTemperature(degrees, unit) {
+        if(unit === 'C'){
+          // convertToFahrenheit(degrees);
+          console.log(`25°C is ${convertToFahrenheit(degrees)}°F`);
+        } else if(unit === 'F') {
+          // convertToCelsius(degrees);
+          console.log(`86°F is ${convertToCelsius(degrees)}°C`);
+        } else{
+          console.log('Measurement not recognised, use either C or F');
+        }
+      }
+
+      convertTemperature(25, 'C');
+      convertTemperature(86, 'F');
+      */
+
+      function convertLength(length, unit, to){
+        if(unit === 'mile' && to === 'km'){
+          console.log(`${length}${unit} is ${length * 1.6}${to}`);
+        } else if(unit === 'km' && to === 'mile'){
+          console.log(`${length}${unit} is ${length / 1.6}${to}`);
+        } else if(unit === 'mile' && to === 'ft') {
+          console.log(`${length}${unit} is ${length * 5280}${to}`);
+        } else if(unit === 'km' && to === 'ft'){
+          console.log(`${length}${unit} is ${length * 3281}${to}`);
+        } else if(unit === 'ft' && to === 'mile') {
+          console.log(`${length}${unit} is ${length / 5280}${to}`);
+        } else if(unit === 'ft' && to === 'km'){
+          console.log(`${length}${unit} is ${length / 3281}${to}`);
+        } else{console.log(`Invalid unit: ${unit}`);}
+
+      }
+
+      convertLength(5, 'mile', 'km');
+      convertLength(5, 'mile', 'ft');
+      convertLength(5, 'km', 'ft');
+      convertLength(5, 'Ibs', 'Ibs');
+    </script>
+  </body>
+</html>

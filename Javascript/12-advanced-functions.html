@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced functions</title>
+  </head>
+  <body>
+    <button class="js-finished">Start</button>
+    
+    <button class="js-addCart">Add to Cart</button>
+
+    <p class="js-display-cart"></p>
+     
+    <button class="js-addToMessages">Add</button>
+    <button class="js-removeFromMessages">Remove</button>
+
+    <button onclick="" class="js-button">Click</button>
+
+    <script>
+      /*
+
+      const buttonElement = document.querySelector('.js-button');
+
+      buttonElement.addEventListener('click', () => {
+        console.log('Click');
+      });
+      */
+
+      /*
+      function greeting() {
+        console.log('Hello');
+      }
+
+      greeting();
+
+      const function1 = function greeting(){
+        console.log('hello2');
+      }
+
+      console.log(function1);
+      console.log(typeof function1);
+      function1();
+
+      const object1 = {
+        num: 2,
+        fun: function greeting() {
+          console.log('Hello3');
+        }
+      };
+      object1.fun();
+
+      function display(param) {
+        console.log(param);
+      }
+      display(2);
+
+      function run(param) {
+        param();
+      }
+      run(function() {
+        console.log('Hello4');
+      });
+      */
+
+      /*
+      setTimeout(function() {
+        console.log('Time Out');
+      }, 3000);
+
+      console.log('next line');
+
+      setInterval(function() {
+        console.log('Interval');
+      }, 3000)
+      */
+
+      /*
+      [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+      ].forEach((value, index) => {
+        if(value === 'wash dishes') {
+          return;
+        }
+        console.log(index);
+        console.log(value);
+      })
+      */ 
+      
+      /*
+      const add = function() {
+        console.log(2 + 3);
+      }
+      add();
+      add();
+      
+
+      function runTwice(fun){
+        fun()
+        fun()
+      }
+
+
+      runTwice(function(){
+        console.log('12b');
+      });
+
+      runTwice(add);
+      */
+
+      document.querySelector('.js-finished').addEventListener('click', () => {
+        start();
+      });
+
+      function start(){
+        const button = document.querySelector('.js-finished');
+
+        setTimeout(() => {
+          button.innerHTML = 'Loading...';
+        }, 1000);
+        setTimeout(() =>  {
+          button.innerHTML = 'Finished';
+        }, 2500);
+      }
+
+      document.querySelector('.js-addCart').addEventListener('click', () => {
+        addCart();
+      });
+
+      function addCart(){
+        let run;
+        let textDisplay = document.querySelector('.js-display-cart');
+        
+        // run = setTimeout(function(){
+          textDisplay.innerHTML = 'Added';
+        // }, 2000)
+
+        clearTimeout(run);
+
+        run = setTimeout(() => {
+          textDisplay.innerHTML = '';
+        }, 2000);
+      }
+
+      
+      /*
+      let headNews;
+      function changeTitle(){
+        let num = 0;
+        headNews = setInterval(() => {
+          document.title = `(${num++}) New messages`;
+        }, 1000);
+
+        headNews = setInterval(function(){
+          document.title = 'Advanced functions';
+        }, 2000);
+        
+      }
+      changeTitle();
+      */
+
+      let messages = 0;
+     function add(){
+      messages +=1;
+      document.title = `(${messages})New Messages`;
+      if(messages <= 0) {
+        document.title = 'Advanced function';
+      }
+     }
+
+     document.querySelector('.js-addToMessages').addEventListener('click', () => {
+        add();
+      });
+
+     function remove(){
+      messages -=1;
+      document.title = `(${messages})New Messages`;
+      if (messages < 0) {
+        document.title = 'Advanced function';
+      }
+     }
+
+     document.querySelector('.js-removeFromMessages').addEventListener('click', () => {
+      remove();
+     });
+
+     /*
+     const arrowFunction = () => {
+      console.log('hello');
+     };
+     arrowFunction();
+
+     const object2 = {
+      method: () => {
+
+      },
+      method(){
+
+      }
+     }
+      */
+
+
+      console.log([1, -3, 5].filter((value, index) => {
+        /*
+        if(value >= 0){
+          return true;
+        } else{
+          return false;
+        }
+        */
+        return value >= 0;
+      }));
+
+      console.log([1, 1, 3].map((value, index) => {
+        return value * 2;
+      }));
+
+      console.log([1, 1, 3].map(value => value * 2));
+
+      const multiply = (value1, value2) => console.log(value1 * value2);
+      multiply(7, 10);
+
+      function countPositive(nums) {
+        let positiveNumber = 0;
+
+        nums.forEach((nums) => {
+          if(nums > 0) {
+            positiveNumber++;
+          }
+        });
+
+        return positiveNumber;
+      }
+
+      console.log(countPositive([1, -3, 5]));
+      console.log(countPositive([-2, 3, -5, 7, 10]));
+
+      function addNum(array, num){
+        return array.map((value, num) => value + num);
+      }
+
+      console.log(addNum([1, 2, 3], 2));
+      console.log(addNum([-2, -1, 0, 99], 2));
+
+      function removeEgg(foods) {
+        let eggRemove = 0;
+
+        return foods.filter((food) => {
+          if(food === 'egg' && eggRemove < 2) {
+            eggRemove++;
+            return false;
+          }
+
+          return true;
+        });
+      }
+
+      console.log(removeEgg(['egg', 'apple', 'egg', 'ham', 'egg', 'ham']));
+    </script>
+  </body>
+</html>

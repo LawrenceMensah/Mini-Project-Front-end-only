@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .add-to-cart{
+        background-color: rgb(255, 216, 20);
+        border: none;
+        padding: 7px 30px;
+        border-radius: 50px;
+        font-size: 15px;
+      }
+
+      .request-now-btn{
+        background-color: black;
+        border-radius: 7px;
+        border: none;
+        padding: 12px 20px;
+        color: white;
+        font-weight: bold;
+      }
+
+      .schedule-for-later-btn{
+        background-color: rgb(230, 230, 230);
+        border-radius: 7px;
+        border: none;
+        padding: 12px 20px;
+        font-weight: bold;
+      }
+      
+      .is-toggled{
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+      .toggling{
+        background-color: rgb(230, 230, 230);
+        color: black;
+        border-radius: 7px;
+        border: none;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="add-to-cart">Add to Cart</button>
+    <button class="request-now-btn">Request now</button>
+    <button class="schedule-for-later-btn">Schedule for later</button>
+    <!-- <button class="js-button">Test</button> -->
+    <button class="is-toggled js-button1" onclick="toggledButton('.js-button1')">Gaming</button>
+    <button class="is-toggled js-button2" onclick="toggledButton('.js-button2')">Music</button>
+    <button class="is-toggled js-button3" onclick="toggledButton('.js-button3')">Tech</button>
+
+    <script>
+      // console.log(document.querySelector('.js-button').classList.contains('js-button'));
+      function toggledButton(selector) {
+        const buttonElement = document.querySelector(selector);
+
+        if(!buttonElement.classList.contains('toggling')) {
+          previousToggle();
+          buttonElement.classList.add('toggling');
+        } else {
+          buttonElement.classList.remove('toggling');
+        }
+      }
+
+      function previousToggle() {
+        const previousButton = document.querySelector('.toggling');
+
+        if(previousButton) {
+          previousButton.classList.remove('toggling');
+        }
+      }
+    </script>
+  </body>
+</html>

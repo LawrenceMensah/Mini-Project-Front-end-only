@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+      body{
+        background-color: rgb(0, 0, 0);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .cal-btn{
+        background-color: #444;
+        border: none;
+        border-radius: 100px;
+        padding: 20px 25px;
+        color: white;
+        font-size: 15px;
+      }
+
+      .cal-btn-2{
+        background-color: orange;
+        border: none;
+        border-radius: 100%;
+        padding: 20px 25px;
+        color: white;
+        font-size: 15px;
+      }
+
+      .cal-display{
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .push-down{
+        margin-top: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="js-text-display cal-display"></p>
+    <p class="push-down">
+      <button onclick="console.log(updateCalculation(1));" class="cal-btn">1</button>
+      <button onclick="console.log(updateCalculation(2));" class="cal-btn">2</button>
+      <button onclick="console.log(updateCalculation(3));" class="cal-btn">3</button>
+      <button onclick="console.log(updateCalculation('+'));" class="cal-btn-2">+</button>
+    </p>
+
+    <p>
+      <button onclick="console.log(updateCalculation(4));" class="cal-btn">4</button>
+      <button onclick="console.log(updateCalculation(5));" class="cal-btn">5</button>
+      <button onclick="console.log(updateCalculation(6));" class="cal-btn">6</button>
+      <button onclick="console.log(updateCalculation('-'));" class="cal-btn-2">-</button>
+    </p>
+
+    <p>
+      <button onclick="console.log(updateCalculation(7));" class="cal-btn">7</button>
+      <button onclick="console.log(updateCalculation(8));" class="cal-btn">8</button>
+      <button onclick="console.log(updateCalculation(9));" class="cal-btn">9</button>
+      <button onclick="console.log(updateCalculation('*'));" class="cal-btn-2">*</button>
+    </p>
+
+    <p>
+      <button onclick="console.log(updateCalculation(0));" class="cal-btn">0</button>
+      <button onclick="console.log(updateCalculation('.'));" class="cal-btn">.</button>
+      <button onclick="calculator = eval(calculator); console.log(calculator); localStorage.setItem('calculator', calculator); saveCalculation();
+      " class="cal-btn">=</button>
+      <button onclick="console.log(updateCalculation('/'));" class="cal-btn-2">/</button>
+    </p>
+    <button onclick="calculator = ''; /*console.log(calculator);*/ localStorage.setItem('calculator', calculator); saveCalculation();
+    " class="cal-btn">Clear</button>
+
+    <script>
+      let calculator = '';
+      calculator = localStorage.getItem('calculator') || '';
+
+      function updateCalculation(value){
+        calculator += value;
+        // console.log(calculator);
+        localStorage.setItem('calculator', calculator);
+        saveCalculation();
+
+        return calculator;
+      }
+
+      function saveCalculation() {
+        document.querySelector('.js-text-display').innerHTML = calculator;
+      }
+    </script>
+  </body>
+</html>

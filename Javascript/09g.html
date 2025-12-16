@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    <p>Amazon Shipping Calculator</p>
+    <input type="text" placeholder="Cost of Order" class="js-cost-input" onkeydown="handleCostKeydown(event);">
+    <button onclick="
+      calculateTotal();
+    ">Calculate</button>
+    <p class="js-total-cost"></p>
+
+    <input type="text" placeholder="Type something" class="js-type-something" onkeydown="
+      someThing(event);
+    ">
+    <p class="js-text-something"></p>
+
+    <script>
+
+      function someThing(event) {
+        const innerInput = document.querySelector('.js-type-something');
+        let input = innerInput.value;
+        document.querySelector('.js-text-something').innerHTML = input;
+
+        // if(event.key === 'Enter') {
+        //   document.querySelector('.js-text-something').innerHTML = input;
+        // }
+      }
+
+      function handleCostKeydown(event) {
+        // console.log(event.key);
+        if(event.key === 'Enter') {
+          calculateTotal();
+        };
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value);
+
+        if(cost < 40) {
+          cost = Math.floor(cost) + 10
+        }
+
+        document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+      }
+
+      console.log(document.querySelector('button').innerHTML);
+      document.querySelector('button').innerHTML = 'Changed';
+
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement);
+
+    </script>
+  </body>
+</html>

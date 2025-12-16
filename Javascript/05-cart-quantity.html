@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Quantity</title>
+  </head>
+  <body>
+    <button onclick="console.log(`Cart Quantity: ${cartQuanitity}`);">Show Quantity</button>
+
+    <button onclick="cartQuanitity +=1; console.log(`Cart Quantity: ${cartQuanitity}`); cartQuanitity > 10 ? alert('The cart is full. Do not update.') : console.log(cartQuanitity);">Add to Cart</button>
+
+    <button onclick="cartQuanitity = cartQuanitity + 2; console.log(`Cart Quantity: ${cartQuanitity}`); cartQuanitity > 10 ? alert('The cart is full. Do not update.') : console.log(cartQuanitity);">+2</button>
+
+    <button onclick="cartQuanitity = cartQuanitity + 3; console.log(`Cart Quantity: ${cartQuanitity}`); cartQuanitity > 10 ? alert('The cart is full. Do not update.') : console.log(cartQuanitity);">+3</button>
+
+    <button onclick="cartQuanitity +=4; console.log(`Cart Quantity: ${cartQuanitity}`); cartQuanitity > 10 ? alert('The cart is full. Do not update.') : console.log(cartQuanitity);">+4</button>
+
+    <button onclick="cartQuanitity +=5; console.log(`Cart Quantity: ${cartQuanitity}`); cartQuanitity > 10 ? alert('The cart is full. Do not update.') : console.log(cartQuanitity);">+5</button>
+
+    <button onclick="cartQuanitity -=1; console.log('Cart Quantity: ' + cartQuanitity); cartQuanitity < 0 ? alert('Not enough items in cart.') : console.log(cartQuanitity);">Remove from cart</button>
+
+    <button onclick="cartQuanitity -=2; console.log(`Cart Quantity: ${cartQuanitity}`); cartQuanitity < 0 ? alert('Not enough items in cart.') : console.log(cartQuanitity);">-2</button>
+
+    <button onclick="cartQuanitity = cartQuanitity-3; console.log(`Cart Quantity: ${cartQuanitity}`); cartQuanitity < 0 ? alert('Not enough items in cart.') : console.log(cartQuanitity);">-3</button>
+
+    <button onclick="cartQuanitity = 0; console.log(`Cart was Reset`); console.log(`Cart Quantity: ${cartQuanitity}`);">Reset Cart</button>
+
+    <script>
+      let cartQuanitity = 0;
+      // if(cartQuanitity < 10){
+      //   alert('The cart is full. Do not update any more.');
+      // }else{console.log(cartQuanitity);}
+    </script>
+  </body>
+</html>

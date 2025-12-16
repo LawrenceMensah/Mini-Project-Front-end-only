@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title>
+  </head>
+  <body>
+    <script>
+      /*console.log(3 < 5);
+
+      console.log(5 == '5.00');
+
+      if(false) {
+        console.log('Hello');
+      } else {
+        console.log('else');
+      }
+
+      const age = 15;
+
+      if (age >= 16) {
+        console.log('You are Legally permitted to Drive.');
+      } else if ( age >= 14) {
+        console.log('You are almost there.');
+      } else {
+        console.log('You are not Legally permitted to Drive.');
+      }
+      */
+
+      /*
+      console.log(true && true);
+      console.log(true || false);
+      console.log(!false);
+      */
+
+      /*const result = 1 ? 'truthy' : 'false';
+      console.log(result);
+
+      false && console.log('helllo');
+
+      const message = 5 && 'hello';
+      console.log(message);
+
+      const currency = undefined || 'USD';
+      console.log(currency);*/
+
+      /*let hour = 13;
+      let name = 'Lawrence';
+      if(hour >= 6 && hour <= 12){
+        alert('Good Morning ' + name);
+        console.log(`Good Morning ${name}`);
+      } else if(hour >= 13 && hour <=17){
+        alert('Good Afternoon ' + name);
+        console.log(`Good Afternoon ${name}`);
+      } else {
+        alert('Good Night ' + name);
+        console.log(`Good Night ${name}`);
+      }*/
+
+      /*let age = 66;
+      const isHoliday = true;
+      if((age <= 6 || age >= 65) && isHoliday){
+        console.log('Discount');
+      } else if((age <= 6 || age >= 65) && !isHoliday){
+        console.log('No Discount');
+      } else{
+        console.log('No Discount');
+      }*/
+
+      const rand = Math.random();
+      let result = '';
+      if(rand < 0.5){
+        result = 'Head';
+      } else{
+        result = 'Tails';
+      }
+      console.log(result);
+
+      let guess = '';
+      guess = 'Head';
+      guess = 'False';
+      if(guess === result){
+        console.log('You Win');
+      } else{console.log('You Lose');}
+    </script>
+  </body>
+</html>

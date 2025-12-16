@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button>9a</button>
+    <button class="js-button-change">9b</button> -->
+    <button onclick="
+    newGame('Heads');
+    " class="js-button-1">Heads</button>
+    <button onclick="
+    newGame('Tails')
+    " class="js-button-2">Tails</button>
+    <p class="js-click-text"></p>
+
+    <input type="text" placeholder="Name" class="js-name" onkeydown="keyUpdater(event);">
+    <button onclick="
+    nameUpdater();
+    ">Submit</button>
+    <p class="js-name-display"></p>
+
+    <script>
+      // console.log(document.querySelector('button'));
+      // document.querySelector('.js-button-change').innerHTML = '9b done';
+      function newGame(choice) {
+        document.querySelector('.js-click-text').innerHTML = `You Chose: ${choice}`;
+      }
+
+      
+
+      function keyUpdater(event) {
+        if(event.key === 'Enter') {
+          nameUpdater();
+        }
+      }
+
+      function nameUpdater() {
+        const innerElement = document.querySelector('.js-name');
+        let jsName = innerElement.value;
+        
+        if(jsName === '') {
+          document.querySelector('.js-name-display').innerHTML = `Please input your name`;
+        } else {
+          document.querySelector('.js-name-display').innerHTML = `Hello, ${jsName}`;
+        }
+      }
+    </script>
+  </body>
+</html>

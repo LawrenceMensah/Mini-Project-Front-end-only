@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+  </head>
+  <body>
+    <p>
+      <button onclick="console.log(updateCalculation(1));">1</button>
+      <button onclick="console.log(updateCalculation(2));">2</button>
+      <button onclick="console.log(updateCalculation(3));">3</button>
+      <button onclick="console.log(updateCalculation('+'));">+</button>
+    </p>
+
+    <p>
+      <button onclick="console.log(updateCalculation(4));">4</button>
+      <button onclick="console.log(updateCalculation(5));">5</button>
+      <button onclick="console.log(updateCalculation(6));">6</button>
+      <button onclick="console.log(updateCalculation('-'));">-</button>
+    </p>
+
+    <p>
+      <button onclick="console.log(updateCalculation(7));">7</button>
+      <button onclick="console.log(updateCalculation(8));">8</button>
+      <button onclick="console.log(updateCalculation(9));">9</button>
+      <button onclick="console.log(updateCalculation('*'));">*</button>
+    </p>
+
+    <p>
+      <button onclick="console.log(updateCalculation(0));">0</button>
+      <button onclick="console.log(updateCalculation('.'));">.</button>
+      <button onclick="calculator = eval(calculator); console.log(calculator); localStorage.setItem('calculator', calculator); saveCalculation();
+      ">=</button>
+      <button onclick="console.log(updateCalculation('/'));">/</button>
+      <button onclick="calculator = ''; /*console.log(calculator);*/ localStorage.setItem('calculator', calculator); saveCalculation();
+      ">Reset</button>
+    </p>
+
+    <p class="js-text-display"></p>
+
+    <script>
+      let calculator = '';
+      calculator = localStorage.getItem('calculator') || '';
+
+      function updateCalculation(value){
+        calculator += value;
+        // console.log(calculator);
+        localStorage.setItem('calculator', calculator);
+        saveCalculation();
+
+        return calculator;
+      }
+
+      function saveCalculation() {
+        document.querySelector('.js-text-display').innerHTML = calculator;
+      }
+    </script>
+  </body>
+</html>
