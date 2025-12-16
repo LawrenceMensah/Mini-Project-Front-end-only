@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicals</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/6396470599.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <h1>AluWorks</h1>
+      </div>
+      <ul id="menuList">
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Product</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+      <div class="menu-icon">
+        <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+      </div>
+    </nav>
+    <main>
+      <div class="hero">
+        <div class="info">
+          <h1>Life in AluWorks</h1>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias corporis nobis qui accusamus, perferendis sint earum perspiciatis laboriosam.</p>
+        </div>
+      </div>
+
+      <div class="approves">
+        <div class="card">
+          <i class="fa-regular fa-circle-check"></i>
+          <div class="text-approves">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias corporis nobis qui accusamus, perferendis sint earum perspiciatis laboriosam.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <i class="fa-regular fa-circle-check"></i>
+          <div class="text-approves">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias corporis nobis qui accusamus, perferendis sint earum perspiciatis laboriosam.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <i class="fa-regular fa-circle-check"></i>
+          <div class="text-approves">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias corporis nobis qui accusamus, perferendis sint earum perspiciatis laboriosam.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact">
+        <hr>
+        <div class="contact-inner">
+          <form action="">
+            <h3>Send us a message now</h3>
+            <br>
+            <input type="text" placeholder="Your email here">
+            <br>
+            <textarea name="contact" id="" placeholder="Your text here"></textarea>
+            <input type="submit" id="Send">
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-wrapper">
+        <div class="footer-box box1">
+          <h1 style="text-align: center;">AluWorks</h1>
+          <p>Official Website: https://AluWorks.com</p>
+          <p>+233 509 284 4324 / +233 843 123 3822</p>
+          <div class="socials">
+            <i class="fa-brands fa-facebook"> </i>
+            <i class="fa-brands fa-instagram"> </i>
+            <i class="fa-brands fa-twitter"> </i>
+            <i class="fa-brands fa-linkedin"> </i>
+          </div>
+        </div>
+
+        <div class="footer-box box2">
+          <ul>
+            <h2>Links</h2>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Form</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Policy</a></li>
+            <li><a href="#">Products</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-box box3">
+          <h2>Our App</h2>
+          <button class="android"><i class="fa-brands fa-google-play"> </i> Download Now</button>
+          <button class="IOS"><i class="fa-brands fa-app-store-ios"> </i> Download Now</button>
+        </div>
+      </div>
+
+      <div class="copy-right">
+        <p>©AluWorks | All rights reserved</p>
+      </div>
+    </footer>
+
+    <script>
+      let menuList = document.getElementById("menuList");
+      menuList.style.maxHeight = "0px";
+
+      function toggleMenu() {
+        if(menuList.style.maxHeight == "0px") {
+          menuList.style.maxHeight = "300px";
+        }else {
+          menuList.style.maxHeight = "0px";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  
+</head>
+<body>
+  
+  <input type="text" class="js-input-todoName">
+  <input type="date" class="js-input-todoDate">
+  <button onclick="addTodo()" class="js-submit">Add</button>
+  <div class="js-display"></div>
+
+
+  <script>
+    let todoList = [];
+
+    renderTodo();
+
+    function renderTodo() {
+      let todoHtml = '';
+
+      for(i = 0; i < todoList.length; i++) {
+        const todoObject = todoList[i];
+
+        const { todoName, todoDate } = todoObject;
+
+        const html = `
+        <div>${todoName}</div>
+        <div>${todoDate}</div>
+        <button onclick="
+        todoList.splice(${i}, 1);
+        renderTodo();
+        ">Delete</button>
+        `;
+
+        todoHtml += html;
+      }
+
+      document.querySelector('.js-display').innerHTML = todoHtml;
+    }
+
+    function addTodo() {
+      const inputElement = document.querySelector('.js-input-todoName');
+      const inputDateElement = document.querySelector('.js-input-todoDate');
+
+      const todoName = inputElement.value;
+      const todoDate = inputDateElement.value;
+
+      todoList.push({
+        todoName,
+        todoDate
+      });
+      
+      renderTodo();
+    }
+
+  </script>
+</body>
+</html>

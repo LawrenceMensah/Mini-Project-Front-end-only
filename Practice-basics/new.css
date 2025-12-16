@@ -1,0 +1,111 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+aside{
+  background-color: aquamarine;
+  width: 250px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.sidebar-btn-container{
+  display: none;
+  position: absolute;
+  left: 10px;
+}
+
+.sidebar-btn-container .sidebar-btn{
+  width: 30px;
+  height: 30px;
+  color: black;
+  font-weight: bolder;
+  font-size: 40px;
+  border: none;
+  background-color: transparent;
+}
+
+.logo{
+  margin: 10px 0px;
+}
+
+.sidebar-menu{
+  margin-top: 20px;
+}
+
+.sidebar-menu ul li{
+  list-style: none;
+  padding: 10px 25px;
+}
+
+.sidebar-menu ul li:hover{
+  background-color: rgb(45, 118, 94);
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.sidebar-menu ul li a{
+  text-decoration: none;
+  color: black;
+}
+
+.inner-menu-list{
+  display: none;
+  transition: all 0.5s ease;
+}
+
+.reveal-hidden{
+  display: block;
+  transition: all 0.5s ease;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content{
+  margin-left: 100px;
+}
+
+.main-content h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main-content p{
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  aside{
+    display: none;
+  }
+
+  .sidebar-btn-container{
+    display: block;
+    z-index: 999;
+  }
+
+  .active{
+    display: block;
+    width: 300px;
+  }
+
+  .main-content{
+    margin-left: 0px;
+  }
+}

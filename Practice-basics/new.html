@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="new.css">
+  </head>
+  <body>
+    <div class="sidebar-btn-container">
+      <button class="sidebar-btn" onclick="sidebarReveal();">☰</button>
+    </div>
+
+    <aside class="sidebar">
+      <div class="sidebar-wrapper-1">
+        <div class="logo">
+          <h1>Company 1</h1>
+        </div>
+
+        <div class="sidebar-menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="drop-down-btn" onclick="dropDown();">
+              <a href="#">Settings</a>  
+            </li>
+            <ul class="inner-menu-list">
+                  <li><a href="#">Login</a></li>
+                  <li><a href="#">Logout</a></li>
+                </ul>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="sidebar-wrapper-2">
+        <p>Hello, Lawrence</p>
+        <p><em>admin</em></p>
+      </div>
+
+    </aside>
+
+    <main>
+      <div class="main-content">
+        <h1>This is a responsive sidebar</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit hic modi et sequi aliquam minus mollitia, earum exercitationem. Maxime labore velit quae itaque, sequi quisquam beatae quibusdam rem numquam consequuntur!</p>
+      </div>
+    </main>
+
+    <script>
+
+      function dropDown() {
+        const innerElement = document.querySelector('.drop-down-btn');
+        const newElement = document.querySelector('.inner-menu-list');
+
+        newElement.classList.toggle('reveal-hidden')
+
+        // if(innerElement.classList.contains('drop-down-btn')){
+        //   newElement.classList.add('reveal-hidden');
+        // } 
+        // if(newElement.classList.contains('reveal-hidden')) {
+        //   // newElement.classList.add('reveal');
+        // }
+      }
+
+      function sidebarReveal() {
+        const innerElement = document.querySelector('.sidebar');
+
+        innerElement.classList.toggle('active');
+      }
+
+    </script>
+  </body>
+</html>

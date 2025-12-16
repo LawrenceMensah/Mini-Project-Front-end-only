@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator</title>
+
+    <style>
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      input, button{
+        border: none;
+        padding: 10px 5px;
+        border-radius: 5px;
+      }
+
+      button{
+        background-color: rgb(54, 118, 96);
+        color: white;
+      }
+
+      h2{
+        text-align: center;
+      }
+
+      .container{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(236, 237, 239);
+        border-radius: 10px;
+        gap: 10px;
+        padding: 10px;
+        width: 400px;
+        box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .grid-box{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .red{
+        color: red;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <h2>
+        Percentage Calculator
+      </h2>
+
+      <div class="grid-box">
+        <input type="text" placeholder="Enter amount" class="js-amount-input">
+        <input type="text" placeholder="Enter percentage" class="js-per-input">
+      </div>
+
+      <button onclick="finalAnswer()" class="js-btn" onkeydown="keyDown(Event)">Calculate</button>
+      <p class="js-result"></p>
+    </div>
+
+    <script>
+      const amountInput = document.querySelector('.js-amount-input');
+      
+      const percentageInput = document.querySelector('.js-per-input');
+      
+      const clickBtn = document.querySelector('.js-btn');
+
+      function keyDown(Event) {
+        if(Event.keyDown === 'Enter'){
+          finalAnswer();
+        }
+      }
+
+      // clickBtn.addEventListener("click", finalAnswer());
+      function finalAnswer() {
+        const finalAmountInput = Number(amountInput.value);
+
+        const convertPercent = Number(percentageInput.value);
+
+        if(typeof finalAmountInput === 'number' && typeof convertPercent === 'number'){
+          let result = finalAmountInput * (convertPercent / 100);
+          document.querySelector('.js-result').innerHTML = `You result: ${result}`;
+        }
+
+        // console.log(result);
+
+        if(typeof finalAmountInput === 'string' && typeof convertPercent === 'string'){
+          document.querySelector('.js-result').innerHTML = 'Input Number';
+          document.querySelector('.js-result').classList.add('red');
+        }
+        
+      }
+
+    </script>
+  </body>
+</html>

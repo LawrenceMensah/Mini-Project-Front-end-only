@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(0, 58, 58);
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        color: white;
+      }
+
+      .main-calc{
+        height: 380px;
+        width: 280px;
+        background-color: rgb(1, 105, 105);
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0.3em 0.3em 1em rgba(255, 255, 255, 0.2);
+      }
+
+      .calculate-paragraph{
+        height: 50px;
+        background-color: rgb(2, 164, 164);
+        border-radius: 10px;
+        margin-bottom: 6px;
+        padding: 5px 10px;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        text-align: right;
+      }
+
+      .paragraph{
+        font-size: 2rem;
+        font-weight: bold;
+        width: 100%;
+        height: 100%;
+        text-align: right;
+      }
+
+      .button-container{
+        height: calc(100% - 70px);
+        display: grid;
+        grid-template-columns: repeat(4, 65px);
+        gap: 5px;
+      }
+
+      .btn-1{
+        border: none;
+        background-color: rgb(1, 67, 67);
+        color: white;
+        font-size: 1.3rem;
+        border-radius: 10px;
+      }
+
+      .btn-2{
+        border: none;
+        background-color: white;
+        color: black;
+        font-size: 1.3rem;
+        border-radius: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="main-calc">
+      <div class="calculate-paragraph">
+        <p class="js-calculate-displayer paragraph"></p>
+      </div>
+
+      <div class="button-container">
+        <button onclick="calculator(1);" class="btn-1">1</button>
+        <button onclick="calculator(2);" class="btn-1">2</button>
+        <button onclick="calculator(3);" class="btn-1">3</button>
+        <button onclick="calculator('+');" class="btn-2">+</button>
+        <button onclick="calculator(4);" class="btn-1">4</button>
+        <button onclick="calculator(5);" class="btn-1">5</button>
+        <button onclick="calculator(6);" class="btn-1">6</button>
+        <button onclick="calculator('-');" class="btn-2">-</button>
+        <button onclick="calculator(7);" class="btn-1">7</button>
+        <button onclick="calculator(8);" class="btn-1">8</button>
+        <button onclick="calculator(9);" class="btn-1">9</button>
+        <button onclick="calculator('*');" class="btn-2">*</button>
+        <button onclick="calculator(0);" class="btn-1">0</button>
+        <button onclick="calculator('.');"class="btn-1">.</button>
+        <button onclick="calculator('/');" class="btn-1">/</button>
+        <button onclick="equalTo();" class="btn-2">=</button>
+        <button onclick="calculator('(');" class="btn-1">(</button>
+        <button onclick="calculator(')');" class="btn-1">)</button>
+        <button onclick="remove();" class="btn-1">DEL</button>
+        <button onclick="calculate = ''; localStorage.getItem('calculate', calculate); displayAm();" class="btn-2">AC</button>
+      </div>
+    </div>
+
+    <script>
+      let calculate = '';
+      localStorage.getItem(calculate) || '';
+
+      function calculator(value) {
+        calculate += value;
+        localStorage.setItem('calculate', calculate);
+        console.log(calculate);
+        document.querySelector('.js-calculate-displayer').innerHTML = calculate;
+        return calculate;
+      }
+
+      function remove(value) {
+        calculate = calculate.slice(0, -1);
+        localStorage.setItem('calculate', calculate);
+        console.log(calculate);
+        document.querySelector('.js-calculate-displayer').innerHTML = calculate;
+        return calculate;
+      }
+
+      function equalTo() {
+        calculate = eval(calculate);
+        console.log(calculate);
+        document.querySelector('.js-calculate-displayer').innerHTML = calculate;
+      }
+
+      function displayAm() {
+        document.querySelector('.js-calculate-displayer').innerHTML = calculate;
+      }
+    </script>
+  </body>
+</html>

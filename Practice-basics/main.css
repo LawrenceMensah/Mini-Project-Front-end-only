@@ -1,0 +1,408 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html,body{
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 239, 225);
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  height: 70px;
+  background-color: brown;
+  position: relative;
+}
+
+.logo{
+  color: #fff;
+}
+
+nav ul#menuList{
+  display: flex;
+  margin-bottom: 30px;
+}
+
+nav ul li{
+  padding: 8px 15px;
+  border-radius: 15px;
+  list-style: none;
+}
+
+/* nav ul li:hover{
+  background-color: rgb(113, 21, 21);
+  height: 34px;
+} */
+
+nav ul li a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu-icon{
+  color: #fff;
+  display: none;
+}
+
+.menu-icon i{
+  font-size: 30px;
+}
+
+main .hero{
+  background-image: url(https://i.pinimg.com/1200x/58/43/3c/58433c74f0572a5e69a3cb67869c7647.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .hero .info{
+  width: 50%;
+  color: #323232;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .hero .info h1{
+  text-align: center;
+  padding: 10px;
+  font-size: 3rem;
+  border-bottom: 3px solid brown;
+  animation: h1Move 1s ease forwards;
+
+}
+
+
+@keyframes borderMove {
+  0% {
+    transform: translateX(100px);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes h1Move {
+  0% {
+    transform: translateX(-100px);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+main .hero .info p{
+  width: 50%;
+  text-align: center;
+  line-height: 1.5rem;
+  padding: 10px;
+  animation: borderMove 1s ease;
+}
+
+main .approves{
+  /* display: grid;
+  grid-template-columns: repeat(3 , 1fr); */
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px 20px;
+  height: 300px;
+}
+
+main .approves .card{
+  height: 200px;
+  width: 20%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .approves .card i{
+  font-size: 5rem;
+  text-align: center;
+  padding: 10px;
+  color: brown
+}
+
+main .approves .card .text-approves p{
+  text-align: center;
+  color: brown
+}
+
+main .contact{
+  height: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+main .contact hr{
+  width: 70%;
+  text-align: center;
+  border: 2px solid brown;
+}
+
+main .contact .contact-inner{
+  padding: 20px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: brown;
+}
+
+main .contact .contact-inner form{
+  width: 50%;
+}
+
+main .contact .contact-inner h3{
+  padding: 10px;
+  text-align: center;
+}
+
+input{
+  width: 100%;
+  background-color: rgb(238, 222, 207);
+  padding: 10px 5px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: brown;
+}
+
+textarea{
+  width: 100%;
+  background-color: rgb(238, 222, 207);
+  padding: 20px 5px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: brown;
+}
+
+#Send{
+  background-color: brown;
+  color: #fff;
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+}
+
+footer .footer-wrapper{
+  display: flex;
+ justify-content: center;
+  background-color: brown;
+  color: #fff;
+  padding: 10px 20px;
+  height: max-content;
+}
+
+footer .footer-wrapper .footer-box{
+  width: 25%;
+  padding: 20px 15px;
+}
+
+footer .footer-wrapper .footer-box h1{
+  margin-bottom: 15px;
+}
+
+footer .footer-wrapper .footer-box p{
+  margin-bottom: 10px;
+}
+
+footer .footer-wrapper .footer-box .socials i{
+  font-size: 1.3rem;
+  text-align: center;
+  transition: all 0.5s ease;
+  margin-left: 10px;
+}
+
+footer .footer-wrapper .footer-box .socials i:hover{
+  transform: scaleX(20px);
+  transition: all 0.5s ease;
+}
+
+footer .footer-wrapper .footer-box ul{
+  height: max-content;
+}
+
+footer .footer-wrapper .footer-box li{
+  list-style: none;
+  margin-bottom: 15px;
+  transition: all 0.5s ease;
+}
+
+footer .footer-wrapper .footer-box li:hover{
+  margin-left: 15px;
+  transition: all 0.5s ease;
+}
+
+footer .footer-wrapper .footer-box li a{
+  text-decoration: none;
+  color: #fff;
+  padding: 20px;
+}
+
+footer .footer-wrapper .footer-box h2{
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.android{
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(238, 222, 207);
+  margin: 20px 5px 0px 5px;
+  font-size: 1rem;
+}
+
+.IOS{
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: black;
+  margin: 10px 5px 0px 5px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.copy-right{
+  background-color: rgb(156, 38, 38);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1209px) {
+  main .hero .info{
+    width: 100%;
+  }
+
+  main .approves{
+    gap: 30px;
+  }
+
+  main .approves .card{
+    height: 200px;
+    width: 40%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .approves .card i{
+    font-size: 4rem;
+  }
+
+  main .contact .contact-inner{
+    width: 80%;
+  }
+
+  main .contact .contact-inner form{
+    width: 60%;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  nav ul{
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: brown;
+    overflow: hidden;
+  }
+
+  nav ul li{
+    padding: 15px 0px;
+  }
+
+  .menu-icon{
+    display: block;
+  }
+
+  #menuList{
+    transition: all 0.5s ease;
+    z-index: 999;
+  }
+
+  main .hero .info{
+  width: 100%;
+}
+
+main .approves{
+  flex-direction: column;
+  gap: 20px;
+  height: 650px;
+  align-items: center;
+  justify-content: center;
+}
+
+main .approves .card{
+  height: 200px;
+  width: 60%;
+}
+
+/* main .approves .card i{
+  font-size: 3.5rem;
+} */
+
+main .contact .contact-inner{
+  width: 100%;
+}
+
+main .contact .contact-inner form{
+  width: 70%;
+}
+
+footer .footer-wrapper{
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .footer-wrapper .footer-box{
+  width: 70%;
+  margin-bottom: 10px;
+}
+
+}
+
+@media screen and (max-width: 720px){
+  main .hero .info p{
+  width: 70%;
+}
+}
